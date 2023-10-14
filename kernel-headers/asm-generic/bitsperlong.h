@@ -1,16 +1,24 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-#ifndef __ASM_GENERIC_BITS_PER_LONG
-#define __ASM_GENERIC_BITS_PER_LONG
-
-/*
- * There seems to be no way of detecting this automatically from user
- * space, so 64 bit architectures should override this in their
- * bitsperlong.h. In particular, an architecture that supports
- * both 32 and 64 bit user space must not rely on CONFIG_64BIT
- * to decide it, but rather check a compiler provided macro.
- */
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
+#ifndef _UAPI__ASM_GENERIC_BITS_PER_LONG
+#define _UAPI__ASM_GENERIC_BITS_PER_LONG
 #ifndef __BITS_PER_LONG
 #define __BITS_PER_LONG 32
 #endif
-
-#endif /* __ASM_GENERIC_BITS_PER_LONG */
+#endif

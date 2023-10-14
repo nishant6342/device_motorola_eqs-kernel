@@ -1,49 +1,45 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef __ASM_GENERIC_MSGBUF_H
 #define __ASM_GENERIC_MSGBUF_H
-
 #include <asm/bitsperlong.h>
 #include <asm/ipcbuf.h>
-
-/*
- * generic msqid64_ds structure.
- *
- * Note extra padding because this structure is passed back and forth
- * between kernel and user space.
- *
- * msqid64_ds was originally meant to be architecture specific, but
- * everyone just ended up making identical copies without specific
- * optimizations, so we may just as well all use the same one.
- *
- * 64 bit architectures use a 64-bit long time field here, while
- * 32 bit architectures have a pair of unsigned long values.
- * On big-endian systems, the lower half is in the wrong place.
- *
- * Pad space is left for:
- * - 2 miscellaneous 32-bit values
- */
-
 struct msqid64_ds {
-	struct ipc64_perm msg_perm;
+  struct ipc64_perm msg_perm;
 #if __BITS_PER_LONG == 64
-	long		 msg_stime;	/* last msgsnd time */
-	long		 msg_rtime;	/* last msgrcv time */
-	long		 msg_ctime;	/* last change time */
+  long msg_stime;
+  long msg_rtime;
+  long msg_ctime;
 #else
-	unsigned long	msg_stime;	/* last msgsnd time */
-	unsigned long	msg_stime_high;
-	unsigned long	msg_rtime;	/* last msgrcv time */
-	unsigned long	msg_rtime_high;
-	unsigned long	msg_ctime;	/* last change time */
-	unsigned long	msg_ctime_high;
+  unsigned long msg_stime;
+  unsigned long msg_stime_high;
+  unsigned long msg_rtime;
+  unsigned long msg_rtime_high;
+  unsigned long msg_ctime;
+  unsigned long msg_ctime_high;
 #endif
-	unsigned long	msg_cbytes;	/* current number of bytes on queue */
-	unsigned long	msg_qnum;	/* number of messages in queue */
-	unsigned long	 msg_qbytes;	/* max number of bytes on queue */
-	__kernel_pid_t msg_lspid;	/* pid of last msgsnd */
-	__kernel_pid_t msg_lrpid;	/* last receive pid */
-	unsigned long	 __unused4;
-	unsigned long	 __unused5;
+  unsigned long msg_cbytes;
+  unsigned long msg_qnum;
+  unsigned long msg_qbytes;
+  __kernel_pid_t msg_lspid;
+  __kernel_pid_t msg_lrpid;
+  unsigned long __unused4;
+  unsigned long __unused5;
 };
-
-#endif /* __ASM_GENERIC_MSGBUF_H */
+#endif

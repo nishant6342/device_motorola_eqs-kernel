@@ -1,27 +1,30 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-/* x_tables module for setting the IPv4/IPv6 DSCP field
- *
- * (C) 2002 Harald Welte <laforge@gnumonks.org>
- * based on ipt_FTOS.c (C) 2000 by Matthew G. Marsh <mgm@paktronix.com>
- * This software is distributed under GNU GPL v2, 1991
- *
- * See RFC2474 for a description of the DSCP field within the IP Header.
- *
- * xt_DSCP.h,v 1.7 2002/03/14 12:03:13 laforge Exp
-*/
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef _XT_DSCP_TARGET_H
 #define _XT_DSCP_TARGET_H
 #include <linux/netfilter/xt_dscp.h>
 #include <linux/types.h>
-
-/* target info */
 struct xt_DSCP_info {
-	__u8 dscp;
+  __u8 dscp;
 };
-
 struct xt_tos_target_info {
-	__u8 tos_value;
-	__u8 tos_mask;
+  __u8 tos_value;
+  __u8 tos_mask;
 };
-
-#endif /* _XT_DSCP_TARGET_H */
+#endif

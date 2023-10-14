@@ -1,25 +1,26 @@
-/* SPDX-License-Identifier: GPL-2.0+ WITH Linux-syscall-note */
-/*
- * Userspace driver support for the LED subsystem
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- */
-#ifndef __ULEDS_H_
-#define __ULEDS_H_
-
-#define LED_MAX_NAME_SIZE	64
-
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
+#ifndef _UAPI__ULEDS_H_
+#define _UAPI__ULEDS_H_
+#define LED_MAX_NAME_SIZE 64
 struct uleds_user_dev {
-	char name[LED_MAX_NAME_SIZE];
-	int max_brightness;
+  char name[LED_MAX_NAME_SIZE];
+  int max_brightness;
 };
-
-#endif /* __ULEDS_H_ */
+#endif

@@ -1,28 +1,26 @@
-/* SPDX-License-Identifier: LGPL-2.1+ WITH Linux-syscall-note */
-/*
- *   include/uapi/linux/cifs/cifs_mount.h
- *
- *   Author(s): Scott Lovenberg (scott.lovenberg@gmail.com)
- *
- *   This library is free software; you can redistribute it and/or modify
- *   it under the terms of the GNU Lesser General Public License as published
- *   by the Free Software Foundation; either version 2.1 of the License, or
- *   (at your option) any later version.
- *
- *   This library is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See
- *   the GNU Lesser General Public License for more details.
- */
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef _CIFS_MOUNT_H
 #define _CIFS_MOUNT_H
-
-/* Max string lengths for cifs mounting options. */
-#define CIFS_MAX_DOMAINNAME_LEN 256 /* max fully qualified domain name */
-#define CIFS_MAX_USERNAME_LEN   256 /* reasonable max for current servers */
-#define CIFS_MAX_PASSWORD_LEN   512 /* Windows max seems to be 256 wide chars */
-#define CIFS_MAX_SHARE_LEN      256 /* reasonable max share name length */
-#define CIFS_NI_MAXHOST        1024 /* max host name length (256 * 4 bytes) */
-
-
-#endif /* _CIFS_MOUNT_H */
+#define CIFS_MAX_DOMAINNAME_LEN 256
+#define CIFS_MAX_USERNAME_LEN 256
+#define CIFS_MAX_PASSWORD_LEN 512
+#define CIFS_MAX_SHARE_LEN 256
+#define CIFS_NI_MAXHOST 1024
+#endif

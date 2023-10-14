@@ -1,40 +1,33 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-/*
- * The Linux BAYCOM driver for the Baycom serial 1200 baud modem
- * and the parallel 9600 baud modem
- * (C) 1997-1998 by Thomas Sailer, HB9JNX/AE4WA
- */
-
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef _BAYCOM_H
 #define _BAYCOM_H
-
-/* -------------------------------------------------------------------- */
-/*
- * structs for the IOCTL commands
- */
-
 struct baycom_debug_data {
-	unsigned long debug1;
-	unsigned long debug2;
-	long debug3;
+  unsigned long debug1;
+  unsigned long debug2;
+  long debug3;
 };
-
 struct baycom_ioctl {
-	int cmd;
-	union {
-		struct baycom_debug_data dbg;
-	} data;
+  int cmd;
+  union {
+    struct baycom_debug_data dbg;
+  } data;
 };
-
-/* -------------------------------------------------------------------- */
-
-/*
- * ioctl values change for baycom
- */
-#define BAYCOMCTL_GETDEBUG       0x92
-
-/* -------------------------------------------------------------------- */
-
-#endif /* _BAYCOM_H */
-
-/* --------------------------------------------------------------------- */
+#define BAYCOMCTL_GETDEBUG 0x92
+#endif

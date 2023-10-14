@@ -1,40 +1,41 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-#ifndef	__BPQETHER_H
-#define	__BPQETHER_H
-
-/*
- * 	Defines for the BPQETHER pseudo device driver
- */
-
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
+#ifndef __BPQETHER_H
+#define __BPQETHER_H
 #include <linux/if_ether.h>
-
-#define SIOCSBPQETHOPT		(SIOCDEVPRIVATE+0)	/* reserved */
-#define SIOCSBPQETHADDR		(SIOCDEVPRIVATE+1)
- 
+#define SIOCSBPQETHOPT (SIOCDEVPRIVATE + 0)
+#define SIOCSBPQETHADDR (SIOCDEVPRIVATE + 1)
 struct bpq_ethaddr {
-	unsigned char destination[ETH_ALEN];
-	unsigned char accept[ETH_ALEN];
+  unsigned char destination[ETH_ALEN];
+  unsigned char accept[ETH_ALEN];
 };
-
-/* 
- * For SIOCSBPQETHOPT - this is compatible with PI2/PacketTwin card drivers,
- * currently not implemented, though. If someone wants to hook a radio
- * to his Ethernet card he may find this useful. ;-)
- */
-
-#define SIOCGBPQETHPARAM	0x5000  /* get Level 1 parameters */
-#define SIOCSBPQETHPARAM	0x5001  /* set */
-
-struct bpq_req  {
-    int cmd;
-    int speed;			/* unused */
-    int clockmode;		/* unused */
-    int txdelay;
-    unsigned char persist;	/* unused */
-    int slotime;		/* unused */
-    int squeldelay;
-    int dmachan;		/* unused */
-    int irq;			/* unused */
+#define SIOCGBPQETHPARAM 0x5000
+#define SIOCSBPQETHPARAM 0x5001
+struct bpq_req {
+  int cmd;
+  int speed;
+  int clockmode;
+  int txdelay;
+  unsigned char persist;
+  int slotime;
+  int squeldelay;
+  int dmachan;
+  int irq;
 };
-
 #endif

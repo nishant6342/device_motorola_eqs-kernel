@@ -1,16 +1,25 @@
-/* SPDX-License-Identifier: GPL-2.0-only WITH Linux-syscall-note */
-/*
- * Copyright (c) 2020-2021, The Linux Foundation. All rights reserved.
- */
-
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef __UAPI_LINUX_MSM_GENI_SERIAL_H
 #define __UAPI_LINUX_MSM_GENI_SERIAL_H
-
-/* IOCTLS used by BT clients to control UART power state */
-
-#define MSM_GENI_SERIAL_TIOCFAULT	0x54EC  /* Uart fault */
-#define MSM_GENI_SERIAL_TIOCPMGET	0x54ED	/* PM get */
-#define MSM_GENI_SERIAL_TIOCPMPUT	0x54EE	/* PM put */
-#define MSM_GENI_SERIAL_TIOCPMACT	0x54EF	/* PM is active */
-
-#endif /* __UAPI_LINUX_MSM_GENI_SERIAL_H */
+#define MSM_GENI_SERIAL_TIOCFAULT 0x54EC
+#define MSM_GENI_SERIAL_TIOCPMGET 0x54ED
+#define MSM_GENI_SERIAL_TIOCPMPUT 0x54EE
+#define MSM_GENI_SERIAL_TIOCPMACT 0x54EF
+#endif

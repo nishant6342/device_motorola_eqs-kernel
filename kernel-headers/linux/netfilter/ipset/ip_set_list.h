@@ -1,24 +1,30 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-#ifndef __IP_SET_LIST_H
-#define __IP_SET_LIST_H
-
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
+#ifndef _UAPI__IP_SET_LIST_H
+#define _UAPI__IP_SET_LIST_H
 #include <linux/netfilter/ipset/ip_set.h>
-
-/* List type specific error codes */
 enum {
-	/* Set name to be added/deleted/tested does not exist. */
-	IPSET_ERR_NAME = IPSET_ERR_TYPE_SPECIFIC,
-	/* list:set type is not permitted to add */
-	IPSET_ERR_LOOP,
-	/* Missing reference set */
-	IPSET_ERR_BEFORE,
-	/* Reference set does not exist */
-	IPSET_ERR_NAMEREF,
-	/* Set is full */
-	IPSET_ERR_LIST_FULL,
-	/* Reference set is not added to the set */
-	IPSET_ERR_REF_EXIST,
+  IPSET_ERR_NAME = IPSET_ERR_TYPE_SPECIFIC,
+  IPSET_ERR_LOOP,
+  IPSET_ERR_BEFORE,
+  IPSET_ERR_NAMEREF,
+  IPSET_ERR_LIST_FULL,
+  IPSET_ERR_REF_EXIST,
 };
-
-
-#endif /* __IP_SET_LIST_H */
+#endif

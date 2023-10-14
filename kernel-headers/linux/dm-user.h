@@ -1,23 +1,24 @@
-/* SPDX-License-Identifier: LGPL-2.0+ WITH Linux-syscall-note */
-/*
- * Copyright (C) 2020 Google, Inc
- * Copyright (C) 2020 Palmer Dabbelt <palmerdabbelt@google.com>
- */
-
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef _LINUX_DM_USER_H
 #define _LINUX_DM_USER_H
-
 #include <linux/types.h>
-
-/*
- * dm-user proxies device mapper ops between the kernel and userspace.  It's
- * essentially just an RPC mechanism: all kernel calls create a request,
- * userspace handles that with a response.  Userspace obtains requests via
- * read() and provides responses via write().
- *
- * See Documentation/block/dm-user.rst for more information.
- */
-
 #define DM_USER_REQ_MAP_READ 0
 #define DM_USER_REQ_MAP_WRITE 1
 #define DM_USER_REQ_MAP_FLUSH 2
@@ -31,7 +32,6 @@
 #define DM_USER_REQ_MAP_ZONE_APPEND 10
 #define DM_USER_REQ_MAP_ZONE_RESET 11
 #define DM_USER_REQ_MAP_ZONE_RESET_ALL 12
-
 #define DM_USER_REQ_MAP_FLAG_FAILFAST_DEV 0x00001
 #define DM_USER_REQ_MAP_FLAG_FAILFAST_TRANSPORT 0x00002
 #define DM_USER_REQ_MAP_FLAG_FAILFAST_DRIVER 0x00004
@@ -51,18 +51,15 @@
 #define DM_USER_REQ_MAP_FLAG_HIPRI 0x10000
 #define DM_USER_REQ_MAP_FLAG_DRV 0x20000
 #define DM_USER_REQ_MAP_FLAG_SWAP 0x40000
-
 #define DM_USER_RESP_SUCCESS 0
 #define DM_USER_RESP_ERROR 1
 #define DM_USER_RESP_UNSUPPORTED 2
-
 struct dm_user_message {
-	__u64 seq;
-	__u64 type;
-	__u64 flags;
-	__u64 sector;
-	__u64 len;
-	__u8 buf[];
+  __u64 seq;
+  __u64 type;
+  __u64 flags;
+  __u64 sector;
+  __u64 len;
+  __u8 buf[];
 };
-
 #endif

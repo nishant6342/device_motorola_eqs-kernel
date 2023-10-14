@@ -1,22 +1,25 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-/*
- * udf_fs_i.h
- *
- * This file is intended for the Linux kernel/module. 
- *
- * COPYRIGHT
- *	This file is distributed under the terms of the GNU General Public
- *	License (GPL). Copies of the GPL can be obtained from:
- *		ftp://prep.ai.mit.edu/pub/gnu/GPL
- *	Each contributing author retains all rights to their own work.
- */
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef _UDF_FS_I_H
 #define _UDF_FS_I_H 1
-
-/* exported IOCTLs, we have 'l', 0x40-0x7f */
-#define UDF_GETEASIZE   _IOR('l', 0x40, int)
-#define UDF_GETEABLOCK  _IOR('l', 0x41, void *)
+#define UDF_GETEASIZE _IOR('l', 0x40, int)
+#define UDF_GETEABLOCK _IOR('l', 0x41, void *)
 #define UDF_GETVOLIDENT _IOR('l', 0x42, void *)
 #define UDF_RELOCATE_BLOCKS _IOWR('l', 0x43, long)
-
-#endif /* _UDF_FS_I_H */
+#endif

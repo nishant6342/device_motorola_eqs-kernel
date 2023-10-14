@@ -1,19 +1,27 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-#ifndef _NF_CONNTRACK_FTP_H
-#define _NF_CONNTRACK_FTP_H
-/* FTP tracking. */
-
-/* This enum is exposed to userspace */
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
+#ifndef _UAPI_NF_CONNTRACK_FTP_H
+#define _UAPI_NF_CONNTRACK_FTP_H
 enum nf_ct_ftp_type {
-	/* PORT command from client */
-	NF_CT_FTP_PORT,
-	/* PASV response from server */
-	NF_CT_FTP_PASV,
-	/* EPRT command from client */
-	NF_CT_FTP_EPRT,
-	/* EPSV response from server */
-	NF_CT_FTP_EPSV,
+  NF_CT_FTP_PORT,
+  NF_CT_FTP_PASV,
+  NF_CT_FTP_EPRT,
+  NF_CT_FTP_EPSV,
 };
-
-
-#endif /* _NF_CONNTRACK_FTP_H */
+#endif

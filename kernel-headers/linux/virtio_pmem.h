@@ -1,34 +1,35 @@
-/* SPDX-License-Identifier: (GPL-2.0 WITH Linux-syscall-note) OR BSD-3-Clause */
-/*
- * Definitions for virtio-pmem devices.
- *
- * Copyright (C) 2019 Red Hat, Inc.
- *
- * Author(s): Pankaj Gupta <pagupta@redhat.com>
- */
-
-#ifndef _LINUX_VIRTIO_PMEM_H
-#define _LINUX_VIRTIO_PMEM_H
-
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
+#ifndef _UAPI_LINUX_VIRTIO_PMEM_H
+#define _UAPI_LINUX_VIRTIO_PMEM_H
 #include <linux/types.h>
 #include <linux/virtio_ids.h>
 #include <linux/virtio_config.h>
-
 struct virtio_pmem_config {
-	__le64 start;
-	__le64 size;
+  __le64 start;
+  __le64 size;
 };
-
-#define VIRTIO_PMEM_REQ_TYPE_FLUSH      0
-
+#define VIRTIO_PMEM_REQ_TYPE_FLUSH 0
 struct virtio_pmem_resp {
-	/* Host return status corresponding to flush request */
-	__le32 ret;
+  __le32 ret;
 };
-
 struct virtio_pmem_req {
-	/* command type */
-	__le32 type;
+  __le32 type;
 };
-
 #endif

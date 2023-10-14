@@ -1,25 +1,39 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef _LINUX_SYSINFO_H
 #define _LINUX_SYSINFO_H
-
 #include <linux/types.h>
-
-#define SI_LOAD_SHIFT	16
+#define SI_LOAD_SHIFT 16
 struct sysinfo {
-	__kernel_long_t uptime;		/* Seconds since boot */
-	__kernel_ulong_t loads[3];	/* 1, 5, and 15 minute load averages */
-	__kernel_ulong_t totalram;	/* Total usable main memory size */
-	__kernel_ulong_t freeram;	/* Available memory size */
-	__kernel_ulong_t sharedram;	/* Amount of shared memory */
-	__kernel_ulong_t bufferram;	/* Memory used by buffers */
-	__kernel_ulong_t totalswap;	/* Total swap space size */
-	__kernel_ulong_t freeswap;	/* swap space still available */
-	__u16 procs;		   	/* Number of current processes */
-	__u16 pad;		   	/* Explicit padding for m68k */
-	__kernel_ulong_t totalhigh;	/* Total high memory size */
-	__kernel_ulong_t freehigh;	/* Available high memory size */
-	__u32 mem_unit;			/* Memory unit size in bytes */
-	char _f[20-2*sizeof(__kernel_ulong_t)-sizeof(__u32)];	/* Padding: libc5 uses this.. */
+  __kernel_long_t uptime;
+  __kernel_ulong_t loads[3];
+  __kernel_ulong_t totalram;
+  __kernel_ulong_t freeram;
+  __kernel_ulong_t sharedram;
+  __kernel_ulong_t bufferram;
+  __kernel_ulong_t totalswap;
+  __kernel_ulong_t freeswap;
+  __u16 procs;
+  __u16 pad;
+  __kernel_ulong_t totalhigh;
+  __kernel_ulong_t freehigh;
+  __u32 mem_unit;
+  char _f[20 - 2 * sizeof(__kernel_ulong_t) - sizeof(__u32)];
 };
-
-#endif /* _LINUX_SYSINFO_H */
+#endif

@@ -1,174 +1,140 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-/* $Id: scc.h,v 1.29 1997/04/02 14:56:45 jreuter Exp jreuter $ */
-
-#ifndef _SCC_H
-#define _SCC_H
-
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
+#ifndef _UAPI_SCC_H
+#define _UAPI_SCC_H
 #include <linux/sockios.h>
-
-/* selection of hardware types */
-
-#define PA0HZP		0x00	/* hardware type for PA0HZP SCC card and compatible */
-#define EAGLE		0x01    /* hardware type for EAGLE card */
-#define PC100		0x02	/* hardware type for PC100 card */
-#define PRIMUS		0x04	/* hardware type for PRIMUS-PC (DG9BL) card */
-#define DRSI		0x08	/* hardware type for DRSI PC*Packet card */
-#define BAYCOM		0x10	/* hardware type for BayCom (U)SCC */
-
-/* DEV ioctl() commands */
-
+#define PA0HZP 0x00
+#define EAGLE 0x01
+#define PC100 0x02
+#define PRIMUS 0x04
+#define DRSI 0x08
+#define BAYCOM 0x10
 enum SCC_ioctl_cmds {
-	SIOCSCCRESERVED = SIOCDEVPRIVATE,
-	SIOCSCCCFG,
-	SIOCSCCINI,
-	SIOCSCCCHANINI,
-	SIOCSCCSMEM,
-	SIOCSCCGKISS,
-	SIOCSCCSKISS,
-	SIOCSCCGSTAT,
-	SIOCSCCCAL
+  SIOCSCCRESERVED = SIOCDEVPRIVATE,
+  SIOCSCCCFG,
+  SIOCSCCINI,
+  SIOCSCCCHANINI,
+  SIOCSCCSMEM,
+  SIOCSCCGKISS,
+  SIOCSCCSKISS,
+  SIOCSCCGSTAT,
+  SIOCSCCCAL
 };
-
-/* Device parameter control (from WAMPES) */
-
 enum L1_params {
-	PARAM_DATA,
-	PARAM_TXDELAY,
-	PARAM_PERSIST,
-	PARAM_SLOTTIME,
-	PARAM_TXTAIL,
-	PARAM_FULLDUP,
-	PARAM_SOFTDCD,		/* was: PARAM_HW */
-	PARAM_MUTE,		/* ??? */
-	PARAM_DTR,
-	PARAM_RTS,
-	PARAM_SPEED,
-	PARAM_ENDDELAY,		/* ??? */
-	PARAM_GROUP,
-	PARAM_IDLE,
-	PARAM_MIN,
-	PARAM_MAXKEY,
-	PARAM_WAIT,
-	PARAM_MAXDEFER,
-	PARAM_TX,
-	PARAM_HWEVENT = 31,
-	PARAM_RETURN = 255	/* reset kiss mode */
+  PARAM_DATA,
+  PARAM_TXDELAY,
+  PARAM_PERSIST,
+  PARAM_SLOTTIME,
+  PARAM_TXTAIL,
+  PARAM_FULLDUP,
+  PARAM_SOFTDCD,
+  PARAM_MUTE,
+  PARAM_DTR,
+  PARAM_RTS,
+  PARAM_SPEED,
+  PARAM_ENDDELAY,
+  PARAM_GROUP,
+  PARAM_IDLE,
+  PARAM_MIN,
+  PARAM_MAXKEY,
+  PARAM_WAIT,
+  PARAM_MAXDEFER,
+  PARAM_TX,
+  PARAM_HWEVENT = 31,
+  PARAM_RETURN = 255
 };
-
-/* fulldup parameter */
-
 enum FULLDUP_modes {
-	KISS_DUPLEX_HALF,	/* normal CSMA operation */
-	KISS_DUPLEX_FULL,	/* fullduplex, key down trx after transmission */
-	KISS_DUPLEX_LINK,	/* fullduplex, key down trx after 'idletime' sec */
-	KISS_DUPLEX_OPTIMA	/* fullduplex, let the protocol layer control the hw */
+  KISS_DUPLEX_HALF,
+  KISS_DUPLEX_FULL,
+  KISS_DUPLEX_LINK,
+  KISS_DUPLEX_OPTIMA
 };
-
-/* misc. parameters */
-
-#define TIMER_OFF	65535U	/* to switch off timers */
-#define NO_SUCH_PARAM	65534U	/* param not implemented */
-
-/* HWEVENT parameter */
-
+#define TIMER_OFF 65535U
+#define NO_SUCH_PARAM 65534U
 enum HWEVENT_opts {
-	HWEV_DCD_ON,
-	HWEV_DCD_OFF,
-	HWEV_ALL_SENT
+  HWEV_DCD_ON,
+  HWEV_DCD_OFF,
+  HWEV_ALL_SENT
 };
-
-/* channel grouping */
-
-#define RXGROUP		0100	/* if set, only tx when all channels clear */
-#define TXGROUP		0200	/* if set, don't transmit simultaneously */
-
-/* Tx/Rx clock sources */
-
+#define RXGROUP 0100
+#define TXGROUP 0200
 enum CLOCK_sources {
-	CLK_DPLL,	/* normal halfduplex operation */
-	CLK_EXTERNAL,	/* external clocking (G3RUH/DF9IC modems) */
-	CLK_DIVIDER,	/* Rx = DPLL, Tx = divider (fullduplex with */
-			/* modems without clock regeneration */
-	CLK_BRG		/* experimental fullduplex mode with DPLL/BRG for */
-			/* MODEMs without clock recovery */
+  CLK_DPLL,
+  CLK_EXTERNAL,
+  CLK_DIVIDER,
+  CLK_BRG
 };
-
-/* Tx state */
-
 enum TX_state {
-	TXS_IDLE,	/* Transmitter off, no data pending */
-	TXS_BUSY,	/* waiting for permission to send / tailtime */
-	TXS_ACTIVE,	/* Transmitter on, sending data */
-	TXS_NEWFRAME,	/* reset CRC and send (next) frame */
-	TXS_IDLE2,	/* Transmitter on, no data pending */
-	TXS_WAIT,	/* Waiting for Mintime to expire */
-	TXS_TIMEOUT	/* We had a transmission timeout */
+  TXS_IDLE,
+  TXS_BUSY,
+  TXS_ACTIVE,
+  TXS_NEWFRAME,
+  TXS_IDLE2,
+  TXS_WAIT,
+  TXS_TIMEOUT
 };
-
-typedef unsigned long io_port;	/* type definition for an 'io port address' */
-
-/* SCC statistical information */
-
+typedef unsigned long io_port;
 struct scc_stat {
-        long rxints;            /* Receiver interrupts */
-        long txints;            /* Transmitter interrupts */
-        long exints;            /* External/status interrupts */
-        long spints;            /* Special receiver interrupts */
-
-        long txframes;          /* Packets sent */
-        long rxframes;          /* Number of Frames Actually Received */
-        long rxerrs;            /* CRC Errors */
-        long txerrs;		/* KISS errors */
-        
-	unsigned int nospace;	/* "Out of buffers" */
-	unsigned int rx_over;	/* Receiver Overruns */
-	unsigned int tx_under;	/* Transmitter Underruns */
-
-	unsigned int tx_state;	/* Transmitter state */
-	int tx_queued;		/* tx frames enqueued */
-
-	unsigned int maxqueue;	/* allocated tx_buffers */
-	unsigned int bufsize;	/* used buffersize */
+  long rxints;
+  long txints;
+  long exints;
+  long spints;
+  long txframes;
+  long rxframes;
+  long rxerrs;
+  long txerrs;
+  unsigned int nospace;
+  unsigned int rx_over;
+  unsigned int tx_under;
+  unsigned int tx_state;
+  int tx_queued;
+  unsigned int maxqueue;
+  unsigned int bufsize;
 };
-
 struct scc_modem {
-	long speed;		/* Line speed, bps */
-	char clocksrc;		/* 0 = DPLL, 1 = external, 2 = divider */
-	char nrz;		/* NRZ instead of NRZI */	
+  long speed;
+  char clocksrc;
+  char nrz;
 };
-
 struct scc_kiss_cmd {
-	int  	 command;	/* one of the KISS-Commands defined above */
-	unsigned param;		/* KISS-Param */
+  int command;
+  unsigned param;
 };
-
 struct scc_hw_config {
-	io_port data_a;		/* data port channel A */
-	io_port ctrl_a;		/* control port channel A */
-	io_port data_b;		/* data port channel B */
-	io_port ctrl_b;		/* control port channel B */
-	io_port vector_latch;	/* INTACK-Latch (#) */
-	io_port	special;	/* special function port */
-
-	int	irq;		/* irq */
-	long	clock;		/* clock */
-	char	option;		/* command for function port */
-
-	char brand;		/* hardware type */
-	char escc;		/* use ext. features of a 8580/85180/85280 */
+  io_port data_a;
+  io_port ctrl_a;
+  io_port data_b;
+  io_port ctrl_b;
+  io_port vector_latch;
+  io_port special;
+  int irq;
+  long clock;
+  char option;
+  char brand;
+  char escc;
 };
-
-/* (#) only one INTACK latch allowed. */
-
-
 struct scc_mem_config {
-	unsigned int dummy;
-	unsigned int bufsize;
+  unsigned int dummy;
+  unsigned int bufsize;
 };
-
 struct scc_calibrate {
-	unsigned int time;
-	unsigned char pattern;
+  unsigned int time;
+  unsigned char pattern;
 };
-
-#endif /* _SCC_H */
+#endif

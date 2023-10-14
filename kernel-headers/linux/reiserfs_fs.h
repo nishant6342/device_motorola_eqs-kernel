@@ -1,27 +1,28 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-/*
- * Copyright 1996, 1997, 1998 Hans Reiser, see reiserfs/README for licensing and copyright details
- */
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef _LINUX_REISER_FS_H
 #define _LINUX_REISER_FS_H
-
 #include <linux/types.h>
 #include <linux/magic.h>
-
-/*
- *  include/linux/reiser_fs.h
- *
- *  Reiser File System constants and structures
- *
- */
-
-/* ioctl's command */
-#define REISERFS_IOC_UNPACK		_IOW(0xCD,1,long)
-/* define following flags to be the same as in ext2, so that chattr(1),
-   lsattr(1) will work with us. */
-#define REISERFS_IOC_GETFLAGS		FS_IOC_GETFLAGS
-#define REISERFS_IOC_SETFLAGS		FS_IOC_SETFLAGS
-#define REISERFS_IOC_GETVERSION		FS_IOC_GETVERSION
-#define REISERFS_IOC_SETVERSION		FS_IOC_SETVERSION
-
-#endif				/* _LINUX_REISER_FS_H */
+#define REISERFS_IOC_UNPACK _IOW(0xCD, 1, long)
+#define REISERFS_IOC_GETFLAGS FS_IOC_GETFLAGS
+#define REISERFS_IOC_SETFLAGS FS_IOC_SETFLAGS
+#define REISERFS_IOC_GETVERSION FS_IOC_GETVERSION
+#define REISERFS_IOC_SETVERSION FS_IOC_SETVERSION
+#endif

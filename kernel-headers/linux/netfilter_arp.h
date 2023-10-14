@@ -1,21 +1,27 @@
-/* SPDX-License-Identifier: GPL-1.0+ WITH Linux-syscall-note */
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef __LINUX_ARP_NETFILTER_H
 #define __LINUX_ARP_NETFILTER_H
-
-/* ARP-specific defines for netfilter.
- * (C)2002 Rusty Russell IBM -- This code is GPL.
- */
-
 #include <linux/netfilter.h>
-
-/* There is no PF_ARP. */
-#define NF_ARP		0
-
-/* ARP Hooks */
-#define NF_ARP_IN	0
-#define NF_ARP_OUT	1
-#define NF_ARP_FORWARD	2
-
-#define NF_ARP_NUMHOOKS	3
-
-#endif /* __LINUX_ARP_NETFILTER_H */
+#define NF_ARP 0
+#define NF_ARP_IN 0
+#define NF_ARP_OUT 1
+#define NF_ARP_FORWARD 2
+#define NF_ARP_NUMHOOKS 3
+#endif

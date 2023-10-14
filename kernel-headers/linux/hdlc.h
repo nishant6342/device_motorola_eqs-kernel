@@ -1,24 +1,23 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-/*
- * Generic HDLC support routines for Linux
- *
- * Copyright (C) 1999-2005 Krzysztof Halasa <khc@pm.waw.pl>
- *
- * This program is free software; you can redistribute it and/or modify it
- * under the terms of version 2 of the GNU General Public License
- * as published by the Free Software Foundation.
- */
-
-#ifndef __HDLC_H
-#define __HDLC_H
-
-
-#define HDLC_MAX_MTU 1500	/* Ethernet 1500 bytes */
-#if 0
-#define HDLC_MAX_MRU (HDLC_MAX_MTU + 10 + 14 + 4) /* for ETH+VLAN over FR */
-#else
-#define HDLC_MAX_MRU 1600 /* as required for FR network */
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
+#ifndef _UAPI__HDLC_H
+#define _UAPI__HDLC_H
+#define HDLC_MAX_MTU 1500
+#define HDLC_MAX_MRU 1600
 #endif
-
-
-#endif /* __HDLC_H */

@@ -1,42 +1,43 @@
-/* SPDX-License-Identifier: GPL-2.0+ WITH Linux-syscall-note */
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef _XT_CONNMARK_H
 #define _XT_CONNMARK_H
-
 #include <linux/types.h>
-
-/* Copyright (C) 2002,2004 MARA Systems AB <https://www.marasystems.com>
- * by Henrik Nordstrom <hno@marasystems.com>
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- */
-
 enum {
-	XT_CONNMARK_SET = 0,
-	XT_CONNMARK_SAVE,
-	XT_CONNMARK_RESTORE
+  XT_CONNMARK_SET = 0,
+  XT_CONNMARK_SAVE,
+  XT_CONNMARK_RESTORE
 };
-
 enum {
-	D_SHIFT_LEFT = 0,
-	D_SHIFT_RIGHT,
+  D_SHIFT_LEFT = 0,
+  D_SHIFT_RIGHT,
 };
-
 struct xt_connmark_tginfo1 {
-	__u32 ctmark, ctmask, nfmask;
-	__u8 mode;
+  __u32 ctmark, ctmask, nfmask;
+  __u8 mode;
 };
-
 struct xt_connmark_tginfo2 {
-	__u32 ctmark, ctmask, nfmask;
-	__u8 shift_dir, shift_bits, mode;
+  __u32 ctmark, ctmask, nfmask;
+  __u8 shift_dir, shift_bits, mode;
 };
-
 struct xt_connmark_mtinfo1 {
-	__u32 mark, mask;
-	__u8 invert;
+  __u32 mark, mask;
+  __u8 invert;
 };
-
-#endif /*_XT_CONNMARK_H*/
+#endif

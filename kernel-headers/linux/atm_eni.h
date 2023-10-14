@@ -1,24 +1,27 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-/* atm_eni.h - Driver-specific declarations of the ENI driver (for use by
-	       driver-specific utilities) */
-
-/* Written 1995-2000 by Werner Almesberger, EPFL LRC/ICA */
-
-
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef LINUX_ATM_ENI_H
 #define LINUX_ATM_ENI_H
-
 #include <linux/atmioc.h>
-
-
 struct eni_multipliers {
-	int tx,rx;	/* values are in percent and must be > 100 */
+  int tx, rx;
 };
-
-
-#define ENI_MEMDUMP     _IOW('a',ATMIOC_SARPRV,struct atmif_sioc)
-                                                /* printk memory map */
-#define ENI_SETMULT	_IOW('a',ATMIOC_SARPRV+7,struct atmif_sioc)
-						/* set buffer multipliers */
-
+#define ENI_MEMDUMP _IOW('a', ATMIOC_SARPRV, struct atmif_sioc)
+#define ENI_SETMULT _IOW('a', ATMIOC_SARPRV + 7, struct atmif_sioc)
 #endif

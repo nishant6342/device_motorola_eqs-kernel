@@ -1,59 +1,56 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-#ifndef _LINUX_NEXTHOP_H
-#define _LINUX_NEXTHOP_H
-
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
+#ifndef _UAPI_LINUX_NEXTHOP_H
+#define _UAPI_LINUX_NEXTHOP_H
 #include <linux/types.h>
-
 struct nhmsg {
-	unsigned char	nh_family;
-	unsigned char	nh_scope;     /* return only */
-	unsigned char	nh_protocol;  /* Routing protocol that installed nh */
-	unsigned char	resvd;
-	unsigned int	nh_flags;     /* RTNH_F flags */
+  unsigned char nh_family;
+  unsigned char nh_scope;
+  unsigned char nh_protocol;
+  unsigned char resvd;
+  unsigned int nh_flags;
 };
-
-/* entry in a nexthop group */
 struct nexthop_grp {
-	__u32	id;	  /* nexthop id - must exist */
-	__u8	weight;   /* weight of this nexthop */
-	__u8	resvd1;
-	__u16	resvd2;
+  __u32 id;
+  __u8 weight;
+  __u8 resvd1;
+  __u16 resvd2;
 };
-
 enum {
-	NEXTHOP_GRP_TYPE_MPATH,  /* default type if not specified */
-	__NEXTHOP_GRP_TYPE_MAX,
+  NEXTHOP_GRP_TYPE_MPATH,
+  __NEXTHOP_GRP_TYPE_MAX,
 };
-
 #define NEXTHOP_GRP_TYPE_MAX (__NEXTHOP_GRP_TYPE_MAX - 1)
-
 enum {
-	NHA_UNSPEC,
-	NHA_ID,		/* u32; id for nexthop. id == 0 means auto-assign */
-
-	NHA_GROUP,	/* array of nexthop_grp */
-	NHA_GROUP_TYPE,	/* u16 one of NEXTHOP_GRP_TYPE */
-	/* if NHA_GROUP attribute is added, no other attributes can be set */
-
-	NHA_BLACKHOLE,	/* flag; nexthop used to blackhole packets */
-	/* if NHA_BLACKHOLE is added, OIF, GATEWAY, ENCAP can not be set */
-
-	NHA_OIF,	/* u32; nexthop device */
-	NHA_GATEWAY,	/* be32 (IPv4) or in6_addr (IPv6) gw address */
-	NHA_ENCAP_TYPE, /* u16; lwt encap type */
-	NHA_ENCAP,	/* lwt encap data */
-
-	/* NHA_OIF can be appended to dump request to return only
-	 * nexthops using given device
-	 */
-	NHA_GROUPS,	/* flag; only return nexthop groups in dump */
-	NHA_MASTER,	/* u32;  only return nexthops with given master dev */
-
-	NHA_FDB,	/* flag; nexthop belongs to a bridge fdb */
-	/* if NHA_FDB is added, OIF, BLACKHOLE, ENCAP cannot be set */
-
-	__NHA_MAX,
+  NHA_UNSPEC,
+  NHA_ID,
+  NHA_GROUP,
+  NHA_GROUP_TYPE,
+  NHA_BLACKHOLE,
+  NHA_OIF,
+  NHA_GATEWAY,
+  NHA_ENCAP_TYPE,
+  NHA_ENCAP,
+  NHA_GROUPS,
+  NHA_MASTER,
+  NHA_FDB,
+  __NHA_MAX,
 };
-
-#define NHA_MAX	(__NHA_MAX - 1)
+#define NHA_MAX (__NHA_MAX - 1)
 #endif

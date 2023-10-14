@@ -1,30 +1,26 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-/*
- * include/uapi/linux/smiapp.h
- *
- * Generic driver for SMIA/SMIA++ compliant camera modules
- *
- * Copyright (C) 2014 Intel Corporation
- * Contact: Sakari Ailus <sakari.ailus@iki.fi>
- *
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License
- * version 2 as published by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * General Public License for more details.
- *
- */
-
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef __UAPI_LINUX_SMIAPP_H_
 #define __UAPI_LINUX_SMIAPP_H_
-
-#define V4L2_SMIAPP_TEST_PATTERN_MODE_DISABLED			0
-#define V4L2_SMIAPP_TEST_PATTERN_MODE_SOLID_COLOUR		1
-#define V4L2_SMIAPP_TEST_PATTERN_MODE_COLOUR_BARS		2
-#define V4L2_SMIAPP_TEST_PATTERN_MODE_COLOUR_BARS_GREY		3
-#define V4L2_SMIAPP_TEST_PATTERN_MODE_PN9			4
-
-#endif /* __UAPI_LINUX_SMIAPP_H_ */
+#define V4L2_SMIAPP_TEST_PATTERN_MODE_DISABLED 0
+#define V4L2_SMIAPP_TEST_PATTERN_MODE_SOLID_COLOUR 1
+#define V4L2_SMIAPP_TEST_PATTERN_MODE_COLOUR_BARS 2
+#define V4L2_SMIAPP_TEST_PATTERN_MODE_COLOUR_BARS_GREY 3
+#define V4L2_SMIAPP_TEST_PATTERN_MODE_PN9 4
+#endif

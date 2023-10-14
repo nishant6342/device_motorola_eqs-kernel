@@ -1,21 +1,26 @@
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-#ifndef _LINUX_BINFMTS_H
-#define _LINUX_BINFMTS_H
-
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
+#ifndef _UAPI_LINUX_BINFMTS_H
+#define _UAPI_LINUX_BINFMTS_H
 #include <linux/capability.h>
-
 struct pt_regs;
-
-/*
- * These are the maximum length and maximum number of strings passed to the
- * execve() system call.  MAX_ARG_STRLEN is essentially random but serves to
- * prevent the kernel from being unduly impacted by misaddressed pointers.
- * MAX_ARG_STRINGS is chosen to fit in a signed 32-bit integer.
- */
 #define MAX_ARG_STRLEN (PAGE_SIZE * 32)
 #define MAX_ARG_STRINGS 0x7FFFFFFF
-
-/* sizeof(linux_binprm->buf) */
 #define BINPRM_BUF_SIZE 256
-
-#endif /* _LINUX_BINFMTS_H */
+#endif
